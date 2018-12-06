@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cms';
+  title:string = 'cms';
+  constructor(updates: SwUpdate, @Inject(DOCUMENT) dom: Document) {
+    updates.available.subscribe(event => {
+     updates.activateUpdate().then(() => dom.location.reload())
+   });
+ }
 }
