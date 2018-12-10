@@ -1,0 +1,20 @@
+.sidenav-container {
+    height: 100%;
+    
+    .mat-icon{
+        height:auto;
+        width:auto;
+        font-size:32px;
+    }
+  }
+
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+
+  .nav-list{
+      span{
+          margin:0 16px;
+      }
+     
+  }

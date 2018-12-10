@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" fixedInViewport="true" mode="side" opened [attr.role]="(isMobile | async) ? 'mobile': 'desktop'">
+
+    <mat-nav-list class="nav-list">
+        <a mat-list-item (click)="smallNav = !smallNav">
+            <mat-icon>{{smallNav ? 'chevron_right': 'chevron_left'}}</mat-icon>
+          </a>
+      <a mat-list-item routerLink="summary">
+        <mat-icon>bar_chart</mat-icon>
+        <span *ngIf="!smallNav">Summary</span>
+      </a>
+      <a mat-list-item routerLink="settings">
+          <mat-icon>build</mat-icon>
+          <span *ngIf="!smallNav">Settings</span>
+      </a>
+      <a mat-list-item routerLink="branding">
+          <mat-icon>color_lens</mat-icon>
+          <span *ngIf="!smallNav">Branding</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

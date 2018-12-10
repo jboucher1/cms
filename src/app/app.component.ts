@@ -4,11 +4,9 @@ import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title:string = 'cms';
   constructor(updates: SwUpdate, @Inject(DOCUMENT) dom: Document) {
     updates.available.subscribe(event => {
      updates.activateUpdate().then(() => dom.location.reload())
