@@ -1,7 +1,7 @@
 <h1 class=" title-header mat-display-1" >Add A Module</h1>
 
 <div fxLayout="row wrap" class="container">
-  <button fxFlex="33" mat-button *ngFor="let module of moduleAddList">
+  <button fxFlex="33" fxFlex.xs="100" fxFlex.sm="50" mat-button *ngFor="let module of moduleAddList">
     <div fxLayout="column" class="module-item custom-hover" fxLayoutAlign="start center">
       <mat-icon class="primary-color">{{module.icon}}</mat-icon>
       <span class="title">{{module.title}}</span>
