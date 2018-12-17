@@ -1,0 +1,26 @@
+:host{
+    flex: 1 1 0%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.container{
+    padding:16px;
+}
+
+.module-item{
+    padding:16px;
+    .title{
+        font-size:16px;
+    }
+    mat-icon{
+        width:auto;
+        height:auto;
+        font-size:4em;
+    }
+}
+
+.title-header{
+    margin-top:32px;
+    margin-bottom:32px;
+    text-align:center;
+}

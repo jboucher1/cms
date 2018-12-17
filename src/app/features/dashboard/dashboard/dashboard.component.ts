@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -19,9 +19,12 @@ export class DashboardComponent implements AfterViewInit {
 
   smallNav: boolean = false;
 
+  @Input('url_name') url_name: string;
+
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngAfterViewInit() {
+    console.log('dashboard: ',this.url_name)
  
   }
 

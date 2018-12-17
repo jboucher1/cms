@@ -1,25 +1,42 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav class="sidenav" fixedInViewport="true" mode="side" opened [attr.role]="(isMobile | async) ? 'mobile': 'desktop'">
+<mat-drawer-container>
 
-    <mat-nav-list class="nav-list">
-        <a mat-list-item (click)="smallNav = !smallNav">
-            <mat-icon>{{smallNav ? 'chevron_right': 'chevron_left'}}</mat-icon>
-          </a>
-      <a mat-list-item routerLink="summary">
+  <mat-drawer class="sidenav" mode="side" opened [attr.role]="(isMobile | async) ? 'mobile': 'desktop'"
+    fixedInViewport="true" [ngClass]="{'small-nav': smallNav}">
+    <logo></logo>
+    <mat-nav-list class="nav-list" fxFlex>
+      <a mat-list-item routerLink="summary" class="accent" routerLinkActive="active">
         <mat-icon>bar_chart</mat-icon>
-        <span *ngIf="!smallNav">Summary</span>
+        <span>Summary</span>
       </a>
-      <a mat-list-item routerLink="settings">
-          <mat-icon>build</mat-icon>
-          <span *ngIf="!smallNav">Settings</span>
+      <a mat-list-item routerLink="settings" class="accent" routerLinkActive="active">
+        <mat-icon>build</mat-icon>
+        <span>Settings</span>
       </a>
-      <a mat-list-item routerLink="branding">
-          <mat-icon>color_lens</mat-icon>
-          <span *ngIf="!smallNav">Branding</span>
+      <a mat-list-item routerLink="branding" class="accent" routerLinkActive="active">
+        <mat-icon>color_lens</mat-icon>
+        <span>Branding</span>
+      </a>
+      <a mat-list-item routerLink="modules" class="accent" routerLinkActive="active">
+        <mat-icon>view_module</mat-icon>
+        <span>Modules</span>
       </a>
     </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
+    <div fxLayout="row wrap" class="list-actions">
+      <button mat-button fxFlex>
+        <mat-icon>view_list</mat-icon>
+      </button>
+      <button mat-button fxFlex>
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-button fxFlex>
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+      <button mat-button fxFlex (click)="smallNav = !smallNav">
+        <mat-icon>{{smallNav ? 'chevron_right': 'chevron_left'}}</mat-icon>
+      </button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content fxFlex>
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>

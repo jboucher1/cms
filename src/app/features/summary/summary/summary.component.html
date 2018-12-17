@@ -1,3 +1,29 @@
-<p>
-  summary works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="start start">
+ <div class="mock" fxFlex="30">kkk</div>
+ <div class="mock" fxFlex="70">
+    <ngx-charts-number-card
+    [results]="[
+    {
+      name: 'Android',
+      value:244
+    },
+    {
+      name: 'Apple',
+      value: 31234
+    },
+    {
+      name: 'Windows',
+      value:839
+  }
+  ]"
+    [cardColor]="'grey'"
+    >
+</ngx-charts-number-card>
+ </div>
+ <div class="mock" fxFlex="50">kkk</div>
+ <div class="mock" fxFlex="50">kkk</div>
+ <div class="mock" fxFlex="25">kkk</div>
+ <div class="mock" fxFlex="25">kkk</div>
+ <div class="mock" fxFlex="25">kkk</div>
+ <div class="mock" fxFlex="25">kkk</div>
+</div>

@@ -1,11 +1,22 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModulesComponent } from './modules/modules.component';
+import { RouterModule } from '@angular/router';
+import { ModulesEmptyComponent } from './modules-empty/modules-empty.component';
+import { MatListModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { ModuleListComponent } from './module-list/module-list.component';
+
 
 @NgModule({
-  declarations: [ModulesComponent],
+  declarations: [ModulesComponent, ModulesEmptyComponent, ModuleListComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class ModulesModule { }

@@ -1,0 +1,71 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 700, 500, 900);
+$accent: mat-palette($mat-pink, 700, 500, 900);
+// $primary: mat-palette($mat-indigo, 900);
+// $accent: mat-palette($mat-indigo, A700);
+
+$theme: mat-dark-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+
+
+@mixin theme-classes($theme){
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .primary-background-color{
+        background-color: mat-color($primary);
+        color: mat-color($foreground, text);
+    }
+
+    .primary-color{
+        color: mat-color($primary);
+    }
+
+    .background-color{
+        background-color: mat-color($background, background);
+        color:mat-color($foreground, text);
+
+    }
+
+    .sidenav-theme{
+        background-color: mat-color($background, dialog);
+        color:mat-color($foreground, text);
+        border-right:solid 1px mat-color($foreground, divider);
+    }
+
+    .custom-hover:hover{
+        .mat-icon{
+            color: mat-color($accent);
+        }
+    }
+
+    .accent-background-color{
+        background-color: mat-color($accent);
+        color: mat-color($foreground, text);
+    }
+
+    .accent.active, .accent:hover{
+        color:mat-color($accent) !important;
+    }
+
+    .accent-color{
+        color: mat-color($accent);
+    }
+
+}
+
+@include theme-classes($theme);
+
+.light-theme{
+    $theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+@include theme-classes($theme);
+}

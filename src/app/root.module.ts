@@ -1,29 +1,31 @@
+import { UsersService } from './services/users/users.service';
 import { FeaturesModule } from './features/features.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { RootRoutingModule } from './root-routing.module';
+import { RootComponent } from './root.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    RootComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RootRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
     SharedModule,
     FeaturesModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UsersService],
+  bootstrap: [RootComponent]
 })
-export class AppModule { }
+export class RootModule { }
