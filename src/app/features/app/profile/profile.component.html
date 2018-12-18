@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex class="background-color">
+    <span class="mat-headline header">Update Profile</span>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input [type]="email" matInput required>
+      </mat-form-field>
+    <mat-form-field>
+      <mat-label>Old Password</mat-label>
+      <input matInput [type]="hideOld ? 'password' : 'text'" required>
+      <mat-icon matSuffix (click)="hideOld = !hideOld">{{hideOld ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>New Password</mat-label>
+        <input matInput [type]="hideNew ? 'password' : 'text'" required>
+        <mat-icon matSuffix (click)="hideNew = !hideNew">{{hideNew ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Verify New Password</mat-label>
+          <input matInput [type]="hideNew2 ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="hideNew2 = !hideNew2">{{hideNew2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+    <button mat-button (click)="back()">Cancel</button>
+  </div>

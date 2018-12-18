@@ -34,6 +34,17 @@ $theme: mat-dark-theme($primary, $accent);
 
     }
 
+    .background-dialog-color{
+        background-color: mat-color($background, dialog);
+        color:mat-color($foreground, text);
+    }
+
+    .textbox{
+        border:solid 1px mat-color($foreground, divider);
+        padding:16px 32px;
+        overflow-y: auto;
+    }
+
     .sidenav-theme{
         background-color: mat-color($background, dialog);
         color:mat-color($foreground, text);

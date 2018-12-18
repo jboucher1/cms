@@ -1,16 +1,14 @@
 <div fxLayout="row" style="height:100%;">
   <div class="sidenav-theme" fxLayout="column">
-      <mat-nav-list class="nav-list" fxFlex>
-          <a mat-list-item routerLink="html" class="accent" routerLinkActive="active">
-              <mat-icon>drag_handle</mat-icon>
-              <span>Home</span>
-            </a>
-          <a mat-list-item routerLink="users" class="accent" routerLinkActive="active">
-            <mat-icon>drag_handle</mat-icon>
-            <span>Speakers</span>
-          </a>
-        </mat-nav-list>
-        <button mat-raised-button routerLink="add" color="accent" style="border-radius: 0; padding: 4px 0;">Add Module</button>
+    <mat-nav-list class="nav-list" fxFlex cdkDropList (cdkDropListDropped)="drop($event)">
+      <a mat-list-item cdkDrag routerLink="{{module.type}}/{{module.id}}" class="background-dialog-color accent" *ngFor="let module of modules"
+        [class.active]="activeRoute(module)">
+        <mat-icon>drag_handle</mat-icon>
+        <span>{{module.title}}</span>
+      </a>
+    </mat-nav-list>
+    <button mat-raised-button class="save-button" [class.unhide]="canSave" (click)="saveOrdering()" color="accent">Save Ordering</button>
+    <button mat-raised-button routerLink="add" color="primary" style="border-radius: 0; padding: 4px 0;">Add Module</button>
   </div>
   <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,15 @@
-<p>
-  login works!
-</p>
-<button></button>
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex class="background-color">
+  <logo></logo>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="login()">Submit</button>
+  <button mat-button>Forgot password?</button>
+  <span class="copyright">© BouchDesigns 2018</span>
+</div>

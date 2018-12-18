@@ -17,4 +17,8 @@ export class AppListComponent implements OnInit {
 
   }
 
+  navigate(url_name){
+    this.router.navigate([`app/${url_name}`]);
+  }
+
 }

@@ -36,4 +36,12 @@ declare namespace app {
         title: string,
         subtitle:string
     }
+    export interface Module {
+        type: string,
+        icon:string,
+        hidden:boolean,
+        title: string,
+        order:number,
+        id:number
+    }
 }

@@ -22,22 +22,44 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-drawer-inner-container{
     flex-direction: column;
 }
-.nav-list{
-    padding-top:0;
 
+.nav-list, .cdk-drag-preview{
+    padding-top:0;
     .mat-icon{
         height:auto;
         width:auto;
         font-size:32px;
     }
 
-  span{
-      margin:0 16px;
-  }
-  .mat-list-item{
-      color:inherit;
-  }
+    span{
+        margin:0 16px;
+    }
+    .mat-list-item{
+        color:inherit;
+    }
 }
+
 .mat-nav-list .mat-list-item:focus{
-background:initial !important;
+    background:initial !important;
+}
+
+.header{
+    margin-top:32px !important;
+    text-align:center;
+}
+
+.wrapper{
+    height:100%;
+    width:100%;
+}
+
+.cdk-drag-preview{
+    text-decoration: none;
+    .mat-list-item-content{
+        color:inherit;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        height: inherit;
+    }
 }

@@ -1,5 +1,17 @@
-<div fxLayout="column" class="background-color" fxFlex>
-  This will be an app list
-  <button mat-button routerLink="['app'], {url_name:'jesstest'}">button</button>
+<div class="background-color wrapper">
+<div fxLayout="column"  fxFlex class="container">
 
-  </div>
+    <span class="mat-headline header">App List</span>
+    <div fxFlex class="list">
+      <button mat-raised-button (click)="navigate('jesstest')" style="width:100%;">
+        <div fxLayout="row">
+          click me!!!
+        </div>
+      </button>
+    </div>
+    <div class="action-icons" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-button routerLink="/profile"><mat-icon>person</mat-icon></button>
+      <button mat-button routerLink="/logout"><mat-icon>exit_to_app</mat-icon></button>
+    </div>
+
+</div>

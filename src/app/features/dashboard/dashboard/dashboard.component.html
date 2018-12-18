@@ -22,13 +22,13 @@
       </a>
     </mat-nav-list>
     <div fxLayout="row wrap" class="list-actions">
-      <button mat-button fxFlex>
+      <button mat-button fxFlex routerLink="/app-list">
         <mat-icon>view_list</mat-icon>
       </button>
-      <button mat-button fxFlex>
+      <button mat-button fxFlex routerLink="profile">
         <mat-icon>person</mat-icon>
       </button>
-      <button mat-button fxFlex>
+      <button mat-button fxFlex routerLink="logout">
         <mat-icon>exit_to_app</mat-icon>
       </button>
       <button mat-button fxFlex (click)="smallNav = !smallNav">

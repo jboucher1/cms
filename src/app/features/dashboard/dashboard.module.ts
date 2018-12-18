@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { LogoComponent } from './logo/logo.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
-  declarations: [DashboardComponent, LogoComponent],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -17,7 +17,8 @@ import { LogoComponent } from './logo/logo.component';
     MatIconModule,
     MatListModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ]
 })
 export class DashboardModule { }
